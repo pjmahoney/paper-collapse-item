@@ -9,7 +9,7 @@
 		<script src="../../web-component-tester/browser.js"></script>
 		<script src="../../test-fixture/test-fixture-mocha.js"></script>
 		
-		<link rel="import" href="../paper-collapse-item.html">
+		<script type="module" src="../paper-collapse-item.js"></script>
 		<link rel="import" href="../../test-fixture/test-fixture.html">
 	</head>
 	<body>
@@ -20,31 +20,32 @@
 			</template>
 		</test-fixture>
 	
-		<script>
-			suite('<paper-collapse-item>', function() {
-				suite('open/close behavior', function() {
-					var element;
-	
-					setup(function() {
-						element = fixture('TrivialElement');
-					});
-					
-					test('defaults to closed', function() {
-						expect(element.opened).to.be.eql(false);
-					});
+		<script type="module">
+import '../paper-collapse-item.js';
+suite('<paper-collapse-item>', function() {
+    suite('open/close behavior', function() {
+        var element;
 
-					test('shows open toggle icon when closed', function() {
+        setup(function() {
+						element = fixture('TrivialElement');
+        });
+        
+        test('defaults to closed', function() {
+						expect(element.opened).to.be.eql(false);
+        });
+
+        test('shows open toggle icon when closed', function() {
 						element.opened = false;
 						expect(element._toggleIcon).to.be.eql('icons:expand-more');
-					});
+        });
 
-					test('shows open toggle icon when opened', function() {
+        test('shows open toggle icon when opened', function() {
 						element.opened = true;
 						expect(element._toggleIcon).to.be.eql('icons:expand-less');
-					});
-				});
-			});
-		</script>
+        });
+    });
+});
+</script>
 	
 	</body>
 </html>

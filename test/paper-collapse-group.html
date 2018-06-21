@@ -8,8 +8,8 @@
 		<script src="../../webcomponentsjs/webcomponents-lite.js"></script>
 		<script src="../../web-component-tester/browser.js"></script>
 
-		<link rel="import" href="../paper-collapse-item.html">
-		<link rel="import" href="../paper-collapse-group.html">
+		<script type="module" src="../paper-collapse-item.js"></script>
+		<script type="module" src="../paper-collapse-group.js"></script>
 	</head>
 	<body>
 		<test-fixture id="Group">
@@ -21,15 +21,17 @@
 			</template>
 		</test-fixture>
 
-		<script>
-			suite('<paper-collapse-group>', function() {
+		<script type="module">
+import '../paper-collapse-item.js';
+import '../paper-collapse-group.js';
+suite('<paper-collapse-group>', function() {
 
-				setup(function() {
-					element = fixture('Group');
-				});
+    setup(function() {
+        element = fixture('Group');
+    });
 
-				test('toggle works', function(done) {
-					flush(function() {
+    test('toggle works', function(done) {
+        flush(function() {
 						var items = element._items;
 
 						expect(items[0].opened).to.be.false;
@@ -43,11 +45,11 @@
 						expect(items[0].opened).to.be.false;
 						expect(items[1].opened).to.be.true;
 						done();
-					});
-				});
+        });
+    });
 
-			});
-		</script>
+});
+</script>
 
 	</body>
 </html>

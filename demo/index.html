@@ -10,8 +10,8 @@ https://www.flickr.com/photos/atoach/3750215018/
 		<link rel="import" href="../../iron-icons/iron-icons.html">
 		<link rel="import" href="../../paper-styles/demo-pages.html">
 		<link rel="import" href="../../paper-input/paper-input.html">
-		<link rel="import" href="../paper-collapse-item.html">
-		<link rel="import" href="../paper-collapse-group.html">
+		<script type="module" src="../paper-collapse-item.js"></script>
+		<script type="module" src="../paper-collapse-group.js"></script>
 	</head>
 
 	<body>
@@ -61,12 +61,14 @@ https://www.flickr.com/photos/atoach/3750215018/
 							Lots of very interesting content.
 						</paper-collapse-item>
 
-						<script>
-							var scope = document.querySelector('#events');
-							scope.onToggle = function() {
-								alert('Toggled');
-							};
-						</script>
+						<script type="module">
+import '../paper-collapse-item.js';
+import '../paper-collapse-group.js';
+var scope = document.querySelector('#events');
+scope.onToggle = function() {
+    alert('Toggled');
+};
+</script>
 					</template>
 				</dom-bind>
 			</template>
