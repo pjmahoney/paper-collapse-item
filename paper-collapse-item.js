@@ -1,3 +1,4 @@
+import { Polymer } from '@polymer/polymer/polymer-legacy.js';
 import './simple-paper-item.js';
 
 Polymer({

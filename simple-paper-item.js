@@ -1,3 +1,5 @@
+import { Polymer } from '@polymer/polymer/polymer-legacy.js';
+
 /**
 A &lt;paper-item> that avoids problems with &lt;paper-input> children.
 
