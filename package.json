@@ -1,6 +1,5 @@
 {
   "name": "paper-collapse-item",
-  "flat": true,
   "version": "3.0.0",
   "description": "A Material Design item with header and collapsible content (Polymer)",
   "contributors": [
